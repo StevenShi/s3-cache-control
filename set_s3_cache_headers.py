@@ -8,8 +8,6 @@
 
 
 from boto.s3.connection import S3Connection
-from boto.cloudfront import CloudFrontConnection
-
 
 #--- AWS credentials ----------------------------------------------
 AWS_KEY = '...'

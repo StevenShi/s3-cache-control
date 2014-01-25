@@ -28,13 +28,13 @@ def main():
         
         print key.name
 
-        aggressive_headers = _get_aggressive_cache_headers(key)
+        new_meta = _get_new_meta(key)
 
-        key.copy(AWS_BUCKET_NAME, key, metadata=aggressive_headers, preserve_acl=True)
+        key.copy(AWS_BUCKET_NAME, key, metadata=new_meta, preserve_acl=True)
 
 
 #--- Helpers ----------------------------------------------
-def _get_aggressive_cache_headers(key):
+def _get_new_meta(key):
     metadata = key.metadata
 
     metadata['Content-Type'] = key.content_type

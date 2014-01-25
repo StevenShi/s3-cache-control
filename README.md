@@ -10,7 +10,7 @@ First, you need to install boto.
 
 <code>pip install boto </code>
 
-Next, copy the script below and save it as set_s3_cache_header.py, modified the script to add in your AWS credential and bucket name, then run it:
+Next, download set_s3_cache_header.py, modified the script to add in your AWS credential and bucket name, then run it:
 
 <code>python set_s3_cache_header.py</code>
 

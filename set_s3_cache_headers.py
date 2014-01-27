@@ -25,6 +25,8 @@ def main():
     for key in bucket.list():
         
         print key.name
+        # you need this to get the Content-Type of the key
+        key = bucket.get_key(key.name)
 
         new_meta = _get_new_meta(key)
 

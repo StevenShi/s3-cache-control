@@ -24,25 +24,9 @@ def main():
 
     for key in bucket.list():
         
-        print key.name
-        # you need this to get the Content-Type of the key
         key = bucket.get_key(key.name)
-
-        new_meta = _get_new_meta(key)
-
-        key.copy(AWS_BUCKET_NAME, key, metadata=new_meta, preserve_acl=True)
-
-
-#--- Helpers ----------------------------------------------
-def _get_new_meta(key):
-    metadata = key.metadata
-
-    metadata['Content-Type'] = key.content_type
-
-    metadata['Cache-Control'] = 'max-age=%d, public' % (3600 * 24 * 360)
-
-    return metadata
-
+        key.cache_control = 'max-age=%d, public' % (3600 * 24 * 360 * 2)
+        print key.name + ' ' +  key.cache_control
 
 if __name__ == '__main__':
     main()

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="S3-cache-control : " />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>S3-cache-control</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/StevenShi/s3-cache-control">View on GitHub</a>
+
+          <h1 id="project_title">S3-cache-control</h1>
+          <h2 id="project_tagline"></h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/StevenShi/s3-cache-control/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/StevenShi/s3-cache-control/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>
+<a name="s3-cache-control" class="anchor" href="#s3-cache-control"><span class="octicon octicon-link"></span></a>s3-cache-control</h1>
+
+<p>S3 does not set a default cache-control header, which means files you upload won’t be cached in the browser by default.</p>
+
+<p>It is amazingly obscure how to do something as simple as setting the cache-control key in Amazon S3. The <a href="http://boto.s3.amazonaws.com/ref/s3.html">boto document</a> seems to imply you could do this via key.set_metadata, but no, that won’t work because cache-control is not part of the metadata collection in the boto api. Instead, it’s part of the key attribute: <a href="http://boto.readthedocs.org/en/latest/ref/s3.html">http://boto.readthedocs.org/en/latest/ref/s3.html</a></p>
+
+<p>This program will help you set the cache header.</p>
+
+<p>First, you need to install boto.</p>
+
+<p><code>pip install boto </code></p>
+
+<p>Next, download set_s3_cache_header.py, modified the script to add in your AWS credential and bucket name, then run it:</p>
+
+<p><code>python set_s3_cache_header.py</code></p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">S3-cache-control maintained by <a href="https://github.com/StevenShi">StevenShi</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
